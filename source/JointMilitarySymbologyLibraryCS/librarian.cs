@@ -11,19 +11,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Serialization;
-using System.IO;
-using System.Reflection;
 using NLog;
 using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 using NLog.Targets.Wrappers;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Xml.Serialization;
 
 namespace JointMilitarySymbologyLibrary
 {

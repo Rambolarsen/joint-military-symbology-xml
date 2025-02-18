@@ -11,16 +11,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Threading.Tasks;
 using NLog;
 using Svg;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 
 namespace JointMilitarySymbologyLibrary
 {
