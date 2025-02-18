@@ -41,453 +41,389 @@ namespace DemoApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSIDCConverter));
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.colID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colAnchorPoints = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colSizeShape = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colOrientation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLabel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colRemarks = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colX = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colLength = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TagsLabel = new System.Windows.Forms.TextBox();
-            this.GeoLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.text2525D_2 = new System.Windows.Forms.TextBox();
-            this.label2525D = new System.Windows.Forms.Label();
-            this.text2525D_1 = new System.Windows.Forms.TextBox();
-            this.label2525C = new System.Windows.Forms.Label();
-            this.text2525C = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.statusStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            listBox1 = new ListBox();
+            listBox2 = new ListBox();
+            label2 = new Label();
+            label3 = new Label();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            toolStripStatusLabel2 = new ToolStripStatusLabel();
+            groupBox1 = new GroupBox();
+            checkBox2 = new CheckBox();
+            label10 = new Label();
+            label9 = new Label();
+            listView2 = new ListView();
+            colID = new ColumnHeader();
+            colAnchorPoints = new ColumnHeader();
+            colSizeShape = new ColumnHeader();
+            colOrientation = new ColumnHeader();
+            label8 = new Label();
+            label7 = new Label();
+            listView1 = new ListView();
+            colName = new ColumnHeader();
+            colLabel = new ColumnHeader();
+            colDescription = new ColumnHeader();
+            colRemarks = new ColumnHeader();
+            colX = new ColumnHeader();
+            colY = new ColumnHeader();
+            colType = new ColumnHeader();
+            colLength = new ColumnHeader();
+            TagsLabel = new TextBox();
+            GeoLabel = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            text2525D_2 = new TextBox();
+            label2525D = new Label();
+            text2525D_1 = new TextBox();
+            label2525C = new Label();
+            text2525C = new TextBox();
+            pictureBox1 = new PictureBox();
+            checkBox1 = new CheckBox();
+            statusStrip1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
-            "YXHTXXX--------\tInvalid Symbol",
-            "SFPPV----------\tCrewed Space Vehicle",
-            "SFPPS----------\tSpace Satellite",
-            "SHPAT----------\tSpace Station",
-            "SNAPMFKB-------\tBoom-Only Tanker",
-            "SUAPMFCL-------\tLight Cargo Airlift",
-            "SNGPUCAT-------\tArmored/Tracked",
-            "SFGPUCI--------\tInfantry",
-            "SUGPEWR--------\tRifle/Automatic Weapon",
-            "SSGPIMS---H----\tShip Construction (Installation)",
-            "SPSPCLLLSU-----\tLittoral Combat, SUW",
-            "SHUPWT---------\tTorpedo",
-            "SASACUS--------\tASW USV",
-            "SFAPMFQRZ------\tRPV ES",
-            "SFAP-----------\tAir",
-            "EHIPF----------\tMarine Incident",
-            "OFOPYT---------\tRadio and TV Propaganda",
-            "GFTPUS--------X\tScreen Task",
-            "GHGPGAF-------X\tFortified Area",
-            "WOS-IITM--P----\tIce Thickness (Observed)",
-            "WA-DPFC-FY-L---\tCold Frontolysis",
-            "WO-DHDDA----A--\tDepth Area"});
-            this.listBox1.Location = new System.Drawing.Point(21, 500);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(339, 94);
-            this.listBox1.TabIndex = 8;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            listBox1.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 13;
+            listBox1.Items.AddRange(new object[] { "YXHTXXX--------\tInvalid Symbol", "SFPPV----------\tCrewed Space Vehicle", "SFPPS----------\tSpace Satellite", "SHPAT----------\tSpace Station", "SNAPMFKB-------\tBoom-Only Tanker", "SUAPMFCL-------\tLight Cargo Airlift", "SNGPUCAT-------\tArmored/Tracked", "SFGPUCI--------\tInfantry", "SUGPEWR--------\tRifle/Automatic Weapon", "SSGPIMS---H----\tShip Construction (Installation)", "SPSPCLLLSU-----\tLittoral Combat, SUW", "SHUPWT---------\tTorpedo", "SASACUS--------\tASW USV", "SFAPMFQRZ------\tRPV ES", "SFAP-----------\tAir", "EHIPF----------\tMarine Incident", "OFOPYT---------\tRadio and TV Propaganda", "GFTPUS--------X\tScreen Task", "GHGPGAF-------X\tFortified Area", "WOS-IITM--P----\tIce Thickness (Observed)", "WA-DPFC-FY-L---\tCold Frontolysis", "WO-DHDDA----A--\tDepth Area" });
+            listBox1.Location = new Point(18, 469);
+            listBox1.Name = "listBox1";
+            listBox1.ScrollAlwaysVisible = true;
+            listBox1.Size = new Size(398, 95);
+            listBox1.TabIndex = 8;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // listBox2
             // 
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Items.AddRange(new object[] {
-            "1000600000,1010101010\tAn Invalid Symbol",
-            "1000980000,1000000000\tInvalid Data Symbol",
-            "1000980000,1100000000\tRetired Data Symbol",
-            "1006050000,1208000000\tMiniaturized Civilian Satellite",
-            "1004050000,1119000000\tSpace Launch Vehicle",
-            "1014010000,1101040000\tFighter/Bomber (Ex Neutral)",
-            "1005010000,1102000701\tHeavy Utility Helicopter",
-            "1001011000,1204000000\tCivilian, Lighter than Air",
-            "1006100000,1205000000\tArmored Unit",
-            "1003150000,1201000000\tArmored Vehicle (Equipment)",
-            "1002200000,1101000000\tAircraft Production Installation",
-            "1003301000,1204020000\tMinesweeper",
-            "1002300000,1401040000\tCivilian Merchant, RORO",
-            "1004350000,1101000000\tSubmarine",
-            "1004400000,1604001600\tVehicle Accident",
-            "1005400000,1315130000\tInternal Security Force",
-            "1003250000,2501000000\tFiring Point"});
-            this.listBox2.Location = new System.Drawing.Point(21, 631);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.ScrollAlwaysVisible = true;
-            this.listBox2.Size = new System.Drawing.Size(339, 94);
-            this.listBox2.TabIndex = 9;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            listBox2.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 13;
+            listBox2.Items.AddRange(new object[] { "1000600000,1010101010\tAn Invalid Symbol", "1000980000,1000000000\tInvalid Data Symbol", "1000980000,1100000000\tRetired Data Symbol", "1006050000,1208000000\tMiniaturized Civilian Satellite", "1004050000,1119000000\tSpace Launch Vehicle", "1014010000,1101040000\tFighter/Bomber (Ex Neutral)", "1005010000,1102000701\tHeavy Utility Helicopter", "1001011000,1204000000\tCivilian, Lighter than Air", "1006100000,1205000000\tArmored Unit", "1003150000,1201000000\tArmored Vehicle (Equipment)", "1002200000,1101000000\tAircraft Production Installation", "1003301000,1204020000\tMinesweeper", "1002300000,1401040000\tCivilian Merchant, RORO", "1004350000,1101000000\tSubmarine", "1004400000,1604001600\tVehicle Accident", "1005400000,1315130000\tInternal Security Force", "1003250000,2501000000\tFiring Point" });
+            listBox2.Location = new Point(18, 585);
+            listBox2.Name = "listBox2";
+            listBox2.ScrollAlwaysVisible = true;
+            listBox2.Size = new Size(398, 95);
+            listBox2.TabIndex = 9;
+            listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 17);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Choose an example 2525C Symbol...";
+            label2.AutoSize = true;
+            label2.Location = new Point(18, 450);
+            label2.Name = "label2";
+            label2.Size = new Size(198, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Choose an example 2525C Symbol...";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 611);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "...or choose an example 2525D Symbol";
+            label3.AutoSize = true;
+            label3.Location = new Point(18, 567);
+            label3.Name = "label3";
+            label3.Size = new Size(210, 15);
+            label3.TabIndex = 11;
+            label3.Text = "...or choose an example 2525D Symbol";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 807);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(682, 22);
-            this.statusStrip1.TabIndex = 12;
-            this.statusStrip1.Text = "statusStrip1";
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabel2 });
+            statusStrip1.Location = new Point(0, 698);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Padding = new Padding(1, 0, 12, 0);
+            statusStrip1.Size = new Size(664, 22);
+            statusStrip1.TabIndex = 12;
+            statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(0, 17);
             // 
             // toolStripStatusLabel2
             // 
-            this.toolStripStatusLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(21, 742);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(633, 54);
-            this.label4.TabIndex = 13;
-            this.label4.Text = resources.GetString("label4.Text");
+            toolStripStatusLabel2.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            toolStripStatusLabel2.Size = new Size(0, 17);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.listView2);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Controls.Add(this.TagsLabel);
-            this.groupBox1.Controls.Add(this.GeoLabel);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.text2525D_2);
-            this.groupBox1.Controls.Add(this.label2525D);
-            this.groupBox1.Controls.Add(this.text2525D_1);
-            this.groupBox1.Controls.Add(this.label2525C);
-            this.groupBox1.Controls.Add(this.text2525C);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(21, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(633, 451);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(108, 431);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 17);
-            this.label10.TabIndex = 22;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 431);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 17);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Drawing Note:";
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colID,
-            this.colAnchorPoints,
-            this.colSizeShape,
-            this.colOrientation});
-            this.listView2.Location = new System.Drawing.Point(11, 350);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(606, 69);
-            this.listView2.TabIndex = 20;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // colID
-            // 
-            this.colID.Text = "Name";
-            // 
-            // colAnchorPoints
-            // 
-            this.colAnchorPoints.Text = "Anchor Points";
-            this.colAnchorPoints.Width = 130;
-            // 
-            // colSizeShape
-            // 
-            this.colSizeShape.Text = "Size/Shape";
-            this.colSizeShape.Width = 154;
-            // 
-            // colOrientation
-            // 
-            this.colOrientation.Text = "Orientation";
-            this.colOrientation.Width = 245;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 330);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Drawing Rule:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 190);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 17);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Amplifiers/Labels:";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.colName,
-            this.colLabel,
-            this.colDescription,
-            this.colRemarks,
-            this.colX,
-            this.colY,
-            this.colType,
-            this.colLength});
-            this.listView1.Location = new System.Drawing.Point(11, 210);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(606, 105);
-            this.listView1.TabIndex = 17;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // colName
-            // 
-            this.colName.Text = "Name";
-            this.colName.Width = 106;
-            // 
-            // colLabel
-            // 
-            this.colLabel.Text = "Label";
-            this.colLabel.Width = 100;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Text = "Description";
-            // 
-            // colRemarks
-            // 
-            this.colRemarks.Text = "Remarks";
-            // 
-            // colX
-            // 
-            this.colX.Text = "X";
-            // 
-            // colY
-            // 
-            this.colY.Text = "Y";
-            // 
-            // colType
-            // 
-            this.colType.Text = "Type";
-            // 
-            // colLength
-            // 
-            this.colLength.Text = "Length";
-            // 
-            // TagsLabel
-            // 
-            this.TagsLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TagsLabel.Location = new System.Drawing.Point(92, 137);
-            this.TagsLabel.Multiline = true;
-            this.TagsLabel.Name = "TagsLabel";
-            this.TagsLabel.ReadOnly = true;
-            this.TagsLabel.Size = new System.Drawing.Size(525, 50);
-            this.TagsLabel.TabIndex = 13;
-            // 
-            // GeoLabel
-            // 
-            this.GeoLabel.AutoSize = true;
-            this.GeoLabel.Location = new System.Drawing.Point(89, 108);
-            this.GeoLabel.Name = "GeoLabel";
-            this.GeoLabel.Size = new System.Drawing.Size(0, 17);
-            this.GeoLabel.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Tags:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Geometry:";
-            // 
-            // text2525D_2
-            // 
-            this.text2525D_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2525D_2.Location = new System.Drawing.Point(373, 75);
-            this.text2525D_2.Name = "text2525D_2";
-            this.text2525D_2.Size = new System.Drawing.Size(244, 30);
-            this.text2525D_2.TabIndex = 9;
-            this.text2525D_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text2525D_2_KeyPress);
-            // 
-            // label2525D
-            // 
-            this.label2525D.AutoSize = true;
-            this.label2525D.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2525D.Location = new System.Drawing.Point(291, 53);
-            this.label2525D.Name = "label2525D";
-            this.label2525D.Size = new System.Drawing.Size(76, 25);
-            this.label2525D.TabIndex = 8;
-            this.label2525D.Text = "2525D:";
-            // 
-            // text2525D_1
-            // 
-            this.text2525D_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2525D_1.Location = new System.Drawing.Point(373, 29);
-            this.text2525D_1.MaxLength = 10;
-            this.text2525D_1.Name = "text2525D_1";
-            this.text2525D_1.Size = new System.Drawing.Size(244, 30);
-            this.text2525D_1.TabIndex = 7;
-            this.text2525D_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text2525D_1_KeyPress);
-            // 
-            // label2525C
-            // 
-            this.label2525C.AutoSize = true;
-            this.label2525C.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2525C.Location = new System.Drawing.Point(6, 50);
-            this.label2525C.Name = "label2525C";
-            this.label2525C.Size = new System.Drawing.Size(77, 25);
-            this.label2525C.TabIndex = 6;
-            this.label2525C.Text = "2525C:";
-            // 
-            // text2525C
-            // 
-            this.text2525C.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text2525C.Location = new System.Drawing.Point(84, 48);
-            this.text2525C.MaxLength = 15;
-            this.text2525C.Name = "text2525C";
-            this.text2525C.Size = new System.Drawing.Size(184, 30);
-            this.text2525C.TabIndex = 5;
-            this.text2525C.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text2525C_KeyPress);
-            this.text2525C.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text2525C_KeyUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(376, 500);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(262, 225);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(376, 473);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(192, 21);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Use colored bars for OCA";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(listView2);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(listView1);
+            groupBox1.Controls.Add(TagsLabel);
+            groupBox1.Controls.Add(GeoLabel);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(text2525D_2);
+            groupBox1.Controls.Add(label2525D);
+            groupBox1.Controls.Add(text2525D_1);
+            groupBox1.Controls.Add(label2525C);
+            groupBox1.Controls.Add(text2525C);
+            groupBox1.FlatStyle = FlatStyle.Popup;
+            groupBox1.Location = new Point(18, 11);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(634, 423);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(355, 434);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(148, 21);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Use civilian frames";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(404, 404);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(124, 19);
+            checkBox2.TabIndex = 17;
+            checkBox2.Text = "Use civilian frames";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(94, 404);
+            label10.Name = "label10";
+            label10.Size = new Size(0, 15);
+            label10.TabIndex = 22;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(7, 404);
+            label9.Name = "label9";
+            label9.Size = new Size(83, 15);
+            label9.TabIndex = 21;
+            label9.Text = "Drawing Note:";
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { colID, colAnchorPoints, colSizeShape, colOrientation });
+            listView2.Location = new Point(10, 328);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(618, 65);
+            listView2.TabIndex = 20;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // colID
+            // 
+            colID.Text = "Name";
+            // 
+            // colAnchorPoints
+            // 
+            colAnchorPoints.Text = "Anchor Points";
+            colAnchorPoints.Width = 130;
+            // 
+            // colSizeShape
+            // 
+            colSizeShape.Text = "Size/Shape";
+            colSizeShape.Width = 154;
+            // 
+            // colOrientation
+            // 
+            colOrientation.Text = "Orientation";
+            colOrientation.Width = 245;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(7, 309);
+            label8.Name = "label8";
+            label8.Size = new Size(80, 15);
+            label8.TabIndex = 19;
+            label8.Text = "Drawing Rule:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(7, 178);
+            label7.Name = "label7";
+            label7.Size = new Size(102, 15);
+            label7.TabIndex = 18;
+            label7.Text = "Amplifiers/Labels:";
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { colName, colLabel, colDescription, colRemarks, colX, colY, colType, colLength });
+            listView1.Location = new Point(10, 197);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(618, 99);
+            listView1.TabIndex = 17;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // colName
+            // 
+            colName.Text = "Name";
+            colName.Width = 106;
+            // 
+            // colLabel
+            // 
+            colLabel.Text = "Label";
+            colLabel.Width = 100;
+            // 
+            // colDescription
+            // 
+            colDescription.Text = "Description";
+            // 
+            // colRemarks
+            // 
+            colRemarks.Text = "Remarks";
+            // 
+            // colX
+            // 
+            colX.Text = "X";
+            // 
+            // colY
+            // 
+            colY.Text = "Y";
+            // 
+            // colType
+            // 
+            colType.Text = "Type";
+            // 
+            // colLength
+            // 
+            colLength.Text = "Length";
+            // 
+            // TagsLabel
+            // 
+            TagsLabel.BorderStyle = BorderStyle.None;
+            TagsLabel.Location = new Point(80, 128);
+            TagsLabel.Multiline = true;
+            TagsLabel.Name = "TagsLabel";
+            TagsLabel.ReadOnly = true;
+            TagsLabel.Size = new Size(459, 47);
+            TagsLabel.TabIndex = 13;
+            // 
+            // GeoLabel
+            // 
+            GeoLabel.AutoSize = true;
+            GeoLabel.Location = new Point(78, 101);
+            GeoLabel.Name = "GeoLabel";
+            GeoLabel.Size = new Size(0, 15);
+            GeoLabel.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(7, 127);
+            label6.Name = "label6";
+            label6.Size = new Size(33, 15);
+            label6.TabIndex = 11;
+            label6.Text = "Tags:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 101);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 15);
+            label5.TabIndex = 10;
+            label5.Text = "Geometry:";
+            // 
+            // text2525D_2
+            // 
+            text2525D_2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text2525D_2.Location = new Point(385, 67);
+            text2525D_2.Name = "text2525D_2";
+            text2525D_2.Size = new Size(243, 26);
+            text2525D_2.TabIndex = 9;
+            text2525D_2.KeyPress += text2525D_2_KeyPress;
+            // 
+            // label2525D
+            // 
+            label2525D.AutoSize = true;
+            label2525D.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2525D.Location = new Point(314, 47);
+            label2525D.Name = "label2525D";
+            label2525D.Size = new Size(61, 20);
+            label2525D.TabIndex = 8;
+            label2525D.Text = "2525D:";
+            // 
+            // text2525D_1
+            // 
+            text2525D_1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text2525D_1.Location = new Point(385, 24);
+            text2525D_1.MaxLength = 10;
+            text2525D_1.Name = "text2525D_1";
+            text2525D_1.Size = new Size(243, 26);
+            text2525D_1.TabIndex = 7;
+            text2525D_1.KeyPress += text2525D_1_KeyPress;
+            // 
+            // label2525C
+            // 
+            label2525C.AutoSize = true;
+            label2525C.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2525C.Location = new Point(5, 47);
+            label2525C.Name = "label2525C";
+            label2525C.Size = new Size(60, 20);
+            label2525C.TabIndex = 6;
+            label2525C.Text = "2525C:";
+            // 
+            // text2525C
+            // 
+            text2525C.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text2525C.Location = new Point(74, 45);
+            text2525C.MaxLength = 15;
+            text2525C.Name = "text2525C";
+            text2525C.Size = new Size(234, 26);
+            text2525C.TabIndex = 5;
+            text2525C.KeyPress += text2525C_KeyPress;
+            text2525C.KeyUp += text2525C_KeyUp;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(422, 469);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Padding = new Padding(35, 0, 0, 0);
+            pictureBox1.Size = new Size(230, 211);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.Location = new Point(422, 440);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(159, 19);
+            checkBox1.TabIndex = 16;
+            checkBox1.Text = "Use colored bars for OCA";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // FormSIDCConverter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 829);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
-            this.Name = "FormSIDCConverter";
-            this.Text = "Joint Military Symbology XML Demo";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(664, 720);
+            Controls.Add(checkBox1);
+            Controls.Add(pictureBox1);
+            Controls.Add(groupBox1);
+            Controls.Add(statusStrip1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(listBox2);
+            Controls.Add(listBox1);
+            Name = "FormSIDCConverter";
+            Text = "Joint Military Symbology XML Demo";
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -498,7 +434,6 @@ namespace DemoApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label GeoLabel;
