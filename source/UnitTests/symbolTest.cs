@@ -1,7 +1,4 @@
 ﻿using JointMilitarySymbologyLibrary;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 
 namespace UnitTests
 {
@@ -14,14 +11,14 @@ namespace UnitTests
     {
 
         private static Librarian _librarian;
-        
+
 
         [SetUp]
         public static void MyClassInitialize()
         {
             _librarian = new Librarian(string.Empty);
         }
-   
+
 
         /// <summary>
         ///A test for legacySIDC

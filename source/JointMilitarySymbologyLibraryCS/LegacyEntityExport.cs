@@ -12,10 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace JointMilitarySymbologyLibrary
@@ -82,7 +78,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + itemRootedPath;
             result = result + "," + Convert.ToString(_configHelper.PointSize);
-            result = result + "," + BuildEntityItemName(sig, ss, symbol, entity, code); 
+            result = result + "," + BuildEntityItemName(sig, ss, symbol, entity, code);
             result = result + "," + BuildEntityItemCategory(ss, iType, geometryType);
             result = result + "," + BuildEntityItemTags(sig, ss, symbol, entity, code);
             result = result + "," + id;

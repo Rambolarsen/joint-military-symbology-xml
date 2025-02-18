@@ -12,10 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -30,7 +26,7 @@ namespace JointMilitarySymbologyLibrary
         protected string BuildOCACode(LibraryStandardIdentityGroup identity, LibraryDimension dimension, LibraryStatus status)
         {
             // Creates the unique idntifier code for a given OCA.
-            
+
             string code = "";
 
             if (identity != null && dimension != null)
@@ -73,7 +69,7 @@ namespace JointMilitarySymbologyLibrary
             return result;
         }
 
-        protected string BuildOCAItemTags(LibraryStandardIdentityGroup identity, 
+        protected string BuildOCAItemTags(LibraryStandardIdentityGroup identity,
                                           LibraryDimension dimension,
                                           LibraryStatus status,
                                           string graphicPath,
@@ -99,7 +95,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + "OCA;";
 
-            if(!omitLegacy)
+            if (!omitLegacy)
                 result = result + _configHelper.SIDCIsNA + ";";
 
             if (!omitSource)
@@ -123,7 +119,7 @@ namespace JointMilitarySymbologyLibrary
                     key = key + identity.LegacyStandardIdentityCode[0].Value;
                     key = key + dimension.LegacyDimensionCode[0].Value;
                 }
-                
+
                 key = key + status.LegacyStatusCode[0].Value;
 
                 if (dimension != null)
@@ -140,7 +136,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string name = "";
 
-            if(status != null)
+            if (status != null)
                 name = BuildOCAItemName(identity, dimension, status);
 
             return name;

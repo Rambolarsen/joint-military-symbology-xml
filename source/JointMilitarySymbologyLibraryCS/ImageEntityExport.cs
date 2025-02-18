@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 
 namespace JointMilitarySymbologyLibrary
@@ -49,16 +46,16 @@ namespace JointMilitarySymbologyLibrary
             IconType iType = IconType.MAIN;
 
             string graphicPath = _configHelper.GetPath(ss.ID, FindEnum.FindEntities);
-                         
+
             if (eSubType != null)
             {
                 if (eSubType.Graphic != "" && eSubType.Icon != IconType.FULL_FRAME)
                     graphic = eSubType.Graphic;
                 else
                     if (sig != null)
-                    {
-                        graphic = GrabGraphic(eSubType.CloverGraphic, eSubType.RectangleGraphic, eSubType.SquareGraphic, eSubType.DiamondGraphic, sig.GraphicSuffix);
-                    }
+                {
+                    graphic = GrabGraphic(eSubType.CloverGraphic, eSubType.RectangleGraphic, eSubType.SquareGraphic, eSubType.DiamondGraphic, sig.GraphicSuffix);
+                }
 
                 iType = eSubType.Icon;
             }
@@ -68,9 +65,9 @@ namespace JointMilitarySymbologyLibrary
                     graphic = eType.Graphic;
                 else
                     if (sig != null)
-                    {
-                        graphic = GrabGraphic(eType.CloverGraphic, eType.RectangleGraphic, eType.SquareGraphic, eType.DiamondGraphic, sig.GraphicSuffix);
-                    }
+                {
+                    graphic = GrabGraphic(eType.CloverGraphic, eType.RectangleGraphic, eType.SquareGraphic, eType.DiamondGraphic, sig.GraphicSuffix);
+                }
 
                 iType = eType.Icon;
             }
@@ -80,9 +77,9 @@ namespace JointMilitarySymbologyLibrary
                     graphic = e.Graphic;
                 else
                     if (sig != null)
-                    {
-                        graphic = GrabGraphic(e.CloverGraphic, e.RectangleGraphic, e.SquareGraphic, e.DiamondGraphic, sig.GraphicSuffix);
-                    }
+                {
+                    graphic = GrabGraphic(e.CloverGraphic, e.RectangleGraphic, e.SquareGraphic, e.DiamondGraphic, sig.GraphicSuffix);
+                }
 
                 iType = e.Icon;
             }
@@ -99,18 +96,18 @@ namespace JointMilitarySymbologyLibrary
 
             if (!File.Exists(itemOriginalPath))
                 _notes = _notes + "image file does not exist;";
-            
+
             string itemName = BuildEntityItemName(sig, ss, e, eType, eSubType);
             string itemTags = BuildEntityItemTags(sig, ss, e, eType, eSubType, _omitSource, _omitLegacy);
             string itemID = BuildEntityCode(sig, ss, e, eType, eSubType);
             string itemGeometry = GeometryIs(e, eType, eSubType);
             string itemCategory = BuildEntityItemCategory(ss, iType, itemGeometry);
-            
+
             result = itemRootedPath + "," +
                      Convert.ToString(_configHelper.PointSize) + "," +
                      itemName + "," +
                      itemCategory + "," +
-                     itemTags + "," + 
+                     itemTags + "," +
                      itemID + "," +
                      itemGeometry + "," +
                      _notes;

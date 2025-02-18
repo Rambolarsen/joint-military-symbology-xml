@@ -130,7 +130,7 @@ namespace JointMilitarySymbologyLibrary
 
                                 if (symbolSet != null)
                                 {
-                                    if(symbolSet.SymbolSetCode.DigitOne == 0)
+                                    if (symbolSet.SymbolSetCode.DigitOne == 0)
                                         line = symbolSet.Label + "," + Convert.ToString(symbolSet.SymbolSetCode.DigitTwo);
                                     else
                                         line = symbolSet.Label + "," + Convert.ToString(symbolSet.SymbolSetCode.DigitOne) + Convert.ToString(symbolSet.SymbolSetCode.DigitTwo);

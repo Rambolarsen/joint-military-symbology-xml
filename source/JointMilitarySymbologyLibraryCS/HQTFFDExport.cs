@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -36,12 +33,12 @@ namespace JointMilitarySymbologyLibrary
             {
                 code = Convert.ToString(identityGroup.StandardIdentityGroupCode);
             }
-            
-            if(dimension != null)
+
+            if (dimension != null)
             {
                 code = code + Convert.ToString(dimension.DimensionCode.DigitOne) + Convert.ToString(dimension.DimensionCode.DigitTwo);
-            }      
-                    
+            }
+
             code = code + Convert.ToString(hqTFFD.HQTFDummyCode);
 
             return code;
@@ -73,14 +70,14 @@ namespace JointMilitarySymbologyLibrary
                 result = result + dimension.Label.Replace(',', '-') + _configHelper.DomainSeparator;
                 result = result + identityGroup.Label.Replace(',', '-');
             }
-            
+
             return result;
         }
 
         protected string BuildHQTFFDItemTags(LibraryStandardIdentityGroup identityGroup,
-                                             LibraryDimension dimension, 
-                                             LibraryHQTFDummy hqTFFD, 
-                                             string graphicPath, 
+                                             LibraryDimension dimension,
+                                             LibraryHQTFDummy hqTFFD,
+                                             string graphicPath,
                                              bool omitSource,
                                              bool omitLegacy)
         {
@@ -94,7 +91,7 @@ namespace JointMilitarySymbologyLibrary
             result = result + hqTFFD.Label.Replace(',', '-') + ";";
             result = result + dimension.Label.Replace(',', '-') + ";";
             result = result + identityGroup.Label.Replace(',', '-') + ";";
-            
+
             // Loop through standard identities in the group and add them
 
             foreach (string sIID in identityGroup.StandardIdentityIDs.Split(' '))
@@ -120,7 +117,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + "HQTFFD;";
 
-            if(!omitLegacy)
+            if (!omitLegacy)
                 result = result + _configHelper.SIDCIsNA + ";";
 
             if (!omitSource)
@@ -150,7 +147,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string name = "";
 
-            if(dimension != null && hqTFFD != null)
+            if (dimension != null && hqTFFD != null)
                 name = BuildHQTFFDItemName(identityGroup, dimension, hqTFFD);
 
             return name;

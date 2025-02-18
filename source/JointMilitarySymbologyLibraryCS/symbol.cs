@@ -71,7 +71,7 @@ namespace JointMilitarySymbologyLibrary
         private SIDC _sidc = new SIDC();
         private string _legacySIDC;
 
-        private Dictionary<string,string> _names = new Dictionary<string,string>();
+        private Dictionary<string, string> _names = new Dictionary<string, string>();
 
         private string _tags = "";
         private List<Dictionary<string, string>> _labels = new List<Dictionary<string, string>>();
@@ -240,7 +240,7 @@ namespace JointMilitarySymbologyLibrary
             }
         }
 
-        public Dictionary<string,string> Names
+        public Dictionary<string, string> Names
         {
             get
             {
@@ -297,7 +297,7 @@ namespace JointMilitarySymbologyLibrary
 
             foreach (string graphic in _graphics)
             {
-                if(File.Exists(graphic))
+                if (File.Exists(graphic))
                 {
                     SvgDocument doc = SvgDocument.Open(graphic);
                     if (doc.Height > height)
@@ -349,7 +349,7 @@ namespace JointMilitarySymbologyLibrary
         private void _CreateDrawRuleDictionary(string id)
         {
             LibraryDrawRule drawRule = _librarian.DrawRule(id);
-            
+
             if (drawRule != null)
             {
                 _drawRule.Add("Name", drawRule.ID);
@@ -369,23 +369,23 @@ namespace JointMilitarySymbologyLibrary
             _drawRule.Clear();
             _drawNote = "";
 
-            if(_entitySubType != null)
+            if (_entitySubType != null)
             {
                 id = _entitySubType.DrawRuleID;
                 _drawNote = _entitySubType.DrawNote;
-            } 
-            else if(_entityType != null)
+            }
+            else if (_entityType != null)
             {
                 id = _entityType.DrawRuleID;
                 _drawNote = _entityType.DrawNote;
-            } 
+            }
             else if (_entity != null)
             {
                 id = _entity.DrawRuleID;
                 _drawNote = _entity.DrawNote;
             }
 
-            if(id != "")
+            if (id != "")
                 _CreateDrawRuleDictionary(id);
         }
 
@@ -448,7 +448,7 @@ namespace JointMilitarySymbologyLibrary
                     graphic = _entity.Graphic;
             }
 
-            if(graphic != null)
+            if (graphic != null)
                 _graphics.Add(_configHelper.BuildOriginalPath(path, graphic));
         }
 
@@ -465,12 +465,12 @@ namespace JointMilitarySymbologyLibrary
             if (_affiliation != null)
             {
                 path = _configHelper.GetPath(_context.ID, FindEnum.FindFrames);
-                
-                if(_useCivilianFrame && _affiliation.CivilianGraphic != "")
+
+                if (_useCivilianFrame && _affiliation.CivilianGraphic != "")
                     path = _configHelper.BuildOriginalPath(path, (_status.StatusCode == 1 && _affiliation.PlannedCivilianGraphic != "") ? _affiliation.PlannedCivilianGraphic : _affiliation.CivilianGraphic);
                 else
                     path = _configHelper.BuildOriginalPath(path, (_status.StatusCode == 1 && _affiliation.PlannedGraphic != "") ? _affiliation.PlannedGraphic : _affiliation.Graphic);
-                
+
                 _graphics.Add(path);
             }
 
@@ -482,7 +482,7 @@ namespace JointMilitarySymbologyLibrary
 
                 if (_entitySubType != null)
                 {
-                    if(_entitySubType.Icon == IconType.SPECIAL)
+                    if (_entitySubType.Icon == IconType.SPECIAL)
                         path = _configHelper.GetPath(_symbolSet.ID, FindEnum.FindSpecials);
                     else
                         path = _configHelper.GetPath(_symbolSet.ID, FindEnum.FindEntities);
@@ -644,14 +644,14 @@ namespace JointMilitarySymbologyLibrary
             _names.Clear();
 
             EntityExport ee = new DomainEntityExport(_configHelper);
-            _names.Add("Entity",ee.NameIt(this.IconType == JointMilitarySymbologyLibrary.IconType.FULL_FRAME ? _sig : null, _symbolSet, _entity, _entityType, _entitySubType));
+            _names.Add("Entity", ee.NameIt(this.IconType == JointMilitarySymbologyLibrary.IconType.FULL_FRAME ? _sig : null, _symbolSet, _entity, _entityType, _entitySubType));
 
             ModifierExport me = new DomainModifierExport(_configHelper);
             _names.Add("ModifierOne", me.NameIt(_symbolSet, "1", _modifierOne));
             _names.Add("ModifierTwo", me.NameIt(_symbolSet, "2", _modifierTwo));
 
             FrameExport fe = new DomainFrameExport(_configHelper);
-            if(_affiliation != null)
+            if (_affiliation != null)
                 _names.Add("Frame", fe.NameIt(_context, _dimension, _standardIdentity, _status, _affiliation.CivilianGraphic != "" || _affiliation.PlannedCivilianGraphic != ""));
             else
                 _names.Add("Frame", fe.NameIt(_context, _dimension, _standardIdentity, _status, false));
@@ -670,11 +670,11 @@ namespace JointMilitarySymbologyLibrary
         {
             if (_context != null)
             {
-                if(! _tags.Contains(_context.Label))
+                if (!_tags.Contains(_context.Label))
                     _tags = _tags == "" ? _context.Label : _tags + "; " + _context.Label;
             }
 
-            if(_standardIdentity != null)
+            if (_standardIdentity != null)
             {
                 if (!_tags.Contains(_standardIdentity.Label))
                     _tags = _tags == "" ? _standardIdentity.Label : _tags + "; " + _standardIdentity.Label;
@@ -686,43 +686,43 @@ namespace JointMilitarySymbologyLibrary
                     _tags = _tags == "" ? _dimension.Label : _tags + "; " + _dimension.Label;
             }
 
-            if(_symbolSet != null)
+            if (_symbolSet != null)
             {
                 if (!_tags.Contains(_symbolSet.Label))
-                    _tags = _tags == "" ? _symbolSet.Label : _tags + "; " + _symbolSet.Label; 
+                    _tags = _tags == "" ? _symbolSet.Label : _tags + "; " + _symbolSet.Label;
             }
 
-            if(_entity != null)
+            if (_entity != null)
             {
-                if (!_tags.Contains(_entity.Label)) 
+                if (!_tags.Contains(_entity.Label))
                     _tags = _tags == "" ? _entity.Label : _tags + "; " + _entity.Label;
             }
 
-            if(_entityType != null)
+            if (_entityType != null)
             {
                 if (!_tags.Contains(_entityType.Label))
                     _tags = _tags == "" ? _entityType.Label : _tags + "; " + _entityType.Label;
             }
 
-            if(_entitySubType != null)
+            if (_entitySubType != null)
             {
                 if (!_tags.Contains(_entitySubType.Label))
                     _tags = _tags == "" ? _entitySubType.Label : _tags + "; " + _entitySubType.Label;
             }
 
-            if(_modifierOne != null)
+            if (_modifierOne != null)
             {
                 if (!_tags.Contains(_modifierOne.Label))
                     _tags = _tags == "" ? _modifierOne.Label : _tags + "; " + _modifierOne.Label;
             }
 
-            if(_modifierTwo != null)
+            if (_modifierTwo != null)
             {
                 if (!_tags.Contains(_modifierTwo.Label))
                     _tags = _tags == "" ? _modifierTwo.Label : _tags + "; " + _modifierTwo.Label;
             }
 
-            if(_legacySymbol != null)
+            if (_legacySymbol != null)
             {
                 if (!_tags.Contains(_legacySIDC))
                     _tags = _tags == "" ? _legacySIDC : _tags + "; " + _legacySIDC;
@@ -869,7 +869,7 @@ namespace JointMilitarySymbologyLibrary
 
             _version = _librarian.Version(Convert.ToUInt16(first10.Substring(0, 1)),
                                           Convert.ToUInt16(first10.Substring(1, 1)));
-            
+
             _context = _librarian.Context(Convert.ToUInt16(first10.Substring(2, 1)));
             _standardIdentity = _librarian.StandardIdentity(Convert.ToUInt16(first10.Substring(3, 1)));
             _sig = _librarian.StandardIdentityGroup(_standardIdentity);
@@ -920,7 +920,7 @@ namespace JointMilitarySymbologyLibrary
             }
 
             _librarian.LogConversionResult(_sidc.PartAString + ", " + _sidc.PartBString);
-            
+
             _ValidateStatus();
         }
 
@@ -964,7 +964,7 @@ namespace JointMilitarySymbologyLibrary
             }
 
             _librarian.LogConversionResult(_legacySIDC);
-            
+
             _ValidateStatus();
         }
 
@@ -1036,7 +1036,7 @@ namespace JointMilitarySymbologyLibrary
                 }
                 else
                 {
-                    if(_legacySymbol != null)
+                    if (_legacySymbol != null)
                     {
                         _symbolStat = SymbolStatusEnum.statusEnumOld;
                     }

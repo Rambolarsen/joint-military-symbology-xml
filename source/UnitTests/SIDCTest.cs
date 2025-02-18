@@ -1,10 +1,9 @@
 ﻿using JointMilitarySymbologyLibrary;
-using NUnit.Framework;
 
 namespace UnitTests
 {
-    
-    
+
+
     /// <summary>
     ///This is a test class for SIDCTest and is intended
     ///to contain all SIDCTest Unit Tests
@@ -44,8 +43,8 @@ namespace UnitTests
         [Test]
         public void PartAStringTest()
         {
-            uint partA = 0; 
-            uint partB = 0; 
+            uint partA = 0;
+            uint partB = 0;
             SIDC target = new SIDC(partA, partB);
             string expected = "1000980000";
             string actual;

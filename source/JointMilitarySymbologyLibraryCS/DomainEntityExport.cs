@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -23,7 +20,7 @@ namespace JointMilitarySymbologyLibrary
         // The class that provides column headers and a constructed line or row of
         // comma separated text containing coded domain values for a given SymbolSet
         // and Entity (type and substype) within that SymbolSet.
- 
+
         public DomainEntityExport(ConfigHelper configHelper)
         {
             _configHelper = configHelper;
@@ -45,8 +42,8 @@ namespace JointMilitarySymbologyLibrary
             return BuildEntityItemName(null, null, e, eType, eSubType) + "," + code;
         }
 
-        string IEntityExport.Line(LibraryStandardIdentityGroup sig, 
-                                  SymbolSet ss, 
+        string IEntityExport.Line(LibraryStandardIdentityGroup sig,
+                                  SymbolSet ss,
                                   EntitySubTypeType eSubType)
         {
             string code = BuildEntityCode(null, null, null, null, eSubType);
@@ -57,7 +54,7 @@ namespace JointMilitarySymbologyLibrary
         string IEntityExport.Line(EntitySubTypeType eSubType)
         {
             string code = Convert.ToString(eSubType.EntitySubTypeCode.DigitOne) + Convert.ToString(eSubType.EntitySubTypeCode.DigitTwo);
-            
+
             return eSubType.Label.Replace(',', '-') + "," + code;
         }
     }

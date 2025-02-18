@@ -1,5 +1,4 @@
 ﻿using JointMilitarySymbologyLibrary;
-using NUnit.Framework;
 
 namespace UnitTests
 {
@@ -18,7 +17,7 @@ namespace UnitTests
         {
             string configPath = string.Empty;
             Librarian target = new Librarian(configPath);
-            Assert.That(target,Is.Not.Null, "Librarian object is null.");
+            Assert.That(target, Is.Not.Null, "Librarian object is null.");
         }
 
         /// <summary>
@@ -29,7 +28,7 @@ namespace UnitTests
         {
             string configPath = string.Empty;
             Librarian target = new Librarian(configPath);
-            SIDC sidc = new SIDC(1003010000,1100000000);
+            SIDC sidc = new SIDC(1003010000, 1100000000);
             Symbol actual = null;
             actual = target.MakeSymbol(sidc);
             Assert.That(actual, Is.Not.Null, "Symbol object is null.");

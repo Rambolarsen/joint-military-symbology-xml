@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -33,7 +30,7 @@ namespace JointMilitarySymbologyLibrary
 
             string code = "";
 
-            if(ss != null)
+            if (ss != null)
             {
                 code = code + Convert.ToString(ss.SymbolSetCode.DigitOne) + Convert.ToString(ss.SymbolSetCode.DigitTwo);
             }
@@ -97,9 +94,9 @@ namespace JointMilitarySymbologyLibrary
             return result;
         }
 
-        protected string BuildModifierItemTags(SymbolSet ss, 
-                                               string modNumber, 
-                                               ModifiersTypeModifier m, 
+        protected string BuildModifierItemTags(SymbolSet ss,
+                                               string modNumber,
+                                               ModifiersTypeModifier m,
                                                bool omitSource,
                                                bool omitLegacy)
         {
@@ -131,10 +128,10 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + ";" + typ;
 
-            if(!omitLegacy)
-                result = result + ";" + _configHelper.SIDCIsNA ;
+            if (!omitLegacy)
+                result = result + ";" + _configHelper.SIDCIsNA;
 
-            if(!omitSource)
+            if (!omitSource)
                 result = result + ";" + path + "\\" + m.Graphic;
 
             result = result + ";Point";
@@ -148,7 +145,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string name = "";
 
-            if(ss != null && m != null)
+            if (ss != null && m != null)
                 name = BuildModifierItemName(ss, modNumber, m);
 
             return name;

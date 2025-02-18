@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -41,14 +38,14 @@ namespace JointMilitarySymbologyLibrary
             IconType icoType = IconType.MAIN;
 
             string result = Convert.ToString(ss.SymbolSetCode.DigitOne) + Convert.ToString(ss.SymbolSetCode.DigitTwo);
-            
+
             string code = BuildEntityCode(sig, ss, e, eType, eSubType);
 
             // Remove the first two characters as this output does not require the symbol set code, and exclude any trailing underbar digit
             // Note that these code will not be unique, with the substring operation in place.
 
-            code = code.Substring(2,6);
-            
+            code = code.Substring(2, 6);
+
             result = result + ",";
 
             result = result + e.Label.Replace(',', '-');
@@ -84,7 +81,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + "," + code + "," + _geometryList[(int)geoType];
 
-            result = result + "," + Convert.ToString(icoType) + "," + BuildEntityItemName(sig, ss, e, eType, eSubType); 
+            result = result + "," + Convert.ToString(icoType) + "," + BuildEntityItemName(sig, ss, e, eType, eSubType);
 
             return result;
         }
@@ -119,7 +116,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + "," + code + "," + _geometryList[(int)geoType];
 
-            result = result + "," + Convert.ToString(icoType) + "," + BuildEntityItemName(sig, ss, null, null, eSubType); 
+            result = result + "," + Convert.ToString(icoType) + "," + BuildEntityItemName(sig, ss, null, null, eSubType);
 
             return result;
         }

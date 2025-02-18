@@ -63,7 +63,7 @@ namespace jmsml
             string legacyDest = CommandLineArgs.I.argAsString("/ild");
             string legacySrc = CommandLineArgs.I.argAsString("/ils");
 
-            long size = CommandLineArgs.I.argAsLong("/size"); 
+            long size = CommandLineArgs.I.argAsLong("/size");
 
             bool dataValidation = (CommandLineArgs.I.argAsString("/e") != "false");
             bool appendFiles = (CommandLineArgs.I.argAsString("/+") != "false");
@@ -144,7 +144,7 @@ namespace jmsml
 
             if (exportPath != "")
             {
-                _etl.Export(exportPath, symbolSet, query, xPoints == "/p" || xLines == "" && xAreas == "", 
+                _etl.Export(exportPath, symbolSet, query, xPoints == "/p" || xLines == "" && xAreas == "",
                                                                 xLines == "/l" || xPoints == "" && xAreas == "",
                                                                 xAreas == "/a" || xPoints == "" && xLines == "",
                                                                 _exportThisAs,

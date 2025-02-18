@@ -79,7 +79,7 @@ namespace JointMilitarySymbologyLibrary
         private bool _drawColoredOCABars = true;
         private bool _drawCivilianFrames = false;
 
-        private SortedDictionary<ushort, SymbolSet> _sortedSymbolSets = new SortedDictionary<ushort,SymbolSet>();
+        private SortedDictionary<ushort, SymbolSet> _sortedSymbolSets = new SortedDictionary<ushort, SymbolSet>();
         private List<SymbolSet> _symbolSets = new List<SymbolSet>();
         private List<string> _statusMessages = new List<string> {"Version Not Found",
                                                                  "Context Not Found",
@@ -126,7 +126,7 @@ namespace JointMilitarySymbologyLibrary
 
             if (File.Exists(_configPath))
             {
-                using(FileStream fs = new FileStream(_configPath, FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new FileStream(_configPath, FileMode.Open, FileAccess.Read))
                 {
                     if (fs.CanRead)
                     {
@@ -147,7 +147,7 @@ namespace JointMilitarySymbologyLibrary
             // If the config data was good then...
             //
 
-            if(_configData != null)
+            if (_configData != null)
             {
                 //
                 // Deserialize the library's base xml to get the base contents of the symbology standard
@@ -274,7 +274,7 @@ namespace JointMilitarySymbologyLibrary
                 Array.Reverse(bits);
 
                 logger.Info("----------------------------");
-                logger.Info("Converting: " + converting +  " (" + _statusFlag + ")");
+                logger.Info("Converting: " + converting + " (" + _statusFlag + ")");
 
                 for (int i = 0; i < 17; i++)
                 {
@@ -309,7 +309,7 @@ namespace JointMilitarySymbologyLibrary
             }
         }
 
-        internal Library Library 
+        internal Library Library
         {
             get
             {
@@ -443,7 +443,7 @@ namespace JointMilitarySymbologyLibrary
 
             foreach (LibraryDimension lObj in this._library.Dimensions)
             {
-                foreach(LibraryDimensionSymbolSetRef ssRef in lObj.SymbolSets)
+                foreach (LibraryDimensionSymbolSetRef ssRef in lObj.SymbolSets)
                 {
                     if (ssRef.ID == symbolSetID)
                     {
@@ -698,7 +698,7 @@ namespace JointMilitarySymbologyLibrary
                 }
             }
 
-            if(retObj == null)
+            if (retObj == null)
             {
                 retObj = this.HQTFDummy(0);
             }
@@ -798,7 +798,7 @@ namespace JointMilitarySymbologyLibrary
                 }
             }
 
-           retObj = Amplifier("-", codingScheme);
+            retObj = Amplifier("-", codingScheme);
 
             return retObj;
         }
@@ -872,7 +872,7 @@ namespace JointMilitarySymbologyLibrary
         //                    // Grab the dimension associated with the current affiliation
 
         //                    LibraryDimension lDim = this.Dimension(lObj.DimensionID);
-                            
+
         //                    // For each dimension code in that dimension...
 
         //                    foreach (LegacyLetterCodeType lObj3 in lDim.LegacyDimensionCode)
@@ -1107,7 +1107,7 @@ namespace JointMilitarySymbologyLibrary
             ModifiersTypeModifier retObj = null;
 
             if (symbolSet != null)
-                if(symbolSet.SectorOneModifiers != null)
+                if (symbolSet.SectorOneModifiers != null)
                 {
                     foreach (ModifiersTypeModifier lObj in symbolSet.SectorOneModifiers)
                     {
@@ -1128,7 +1128,7 @@ namespace JointMilitarySymbologyLibrary
             ModifiersTypeModifier retObj = null;
 
             if (symbolSet != null)
-                if(symbolSet.SectorTwoModifiers != null)
+                if (symbolSet.SectorTwoModifiers != null)
                 {
                     foreach (ModifiersTypeModifier lObj in symbolSet.SectorTwoModifiers)
                     {
@@ -1150,7 +1150,7 @@ namespace JointMilitarySymbologyLibrary
             ModifiersTypeModifier retObj = null;
 
             if (symbolSet != null)
-                if(symbolSet.SectorTwoModifiers != null)
+                if (symbolSet.SectorTwoModifiers != null)
                 {
                     foreach (ModifiersTypeModifier lObj in symbolSet.SectorTwoModifiers)
                     {
@@ -1202,7 +1202,7 @@ namespace JointMilitarySymbologyLibrary
                                         {
                                             dimensionOut = lObj;
                                             ssOut = ss;
-                                            
+
                                             return retObj;
                                         }
                                     }
@@ -1210,7 +1210,7 @@ namespace JointMilitarySymbologyLibrary
                             }
                         }
                     }
-                    
+
                 }
             }
 
@@ -1265,11 +1265,11 @@ namespace JointMilitarySymbologyLibrary
             return retObj;
         }
 
-        internal SymbolSetLegacySymbol LegacySymbol(SymbolSet symbolSet, 
-                                                  SymbolSetEntity entity, 
-                                                  SymbolSetEntityEntityType entityType, 
-                                                  EntitySubTypeType entitySubType, 
-                                                  ModifiersTypeModifier modifierOne, 
+        internal SymbolSetLegacySymbol LegacySymbol(SymbolSet symbolSet,
+                                                  SymbolSetEntity entity,
+                                                  SymbolSetEntityEntityType entityType,
+                                                  EntitySubTypeType entitySubType,
+                                                  ModifiersTypeModifier modifierOne,
                                                   ModifiersTypeModifier modifierTwo)
         {
             SymbolSetLegacySymbol retObj = null;
@@ -1302,7 +1302,7 @@ namespace JointMilitarySymbologyLibrary
 
                     foreach (SymbolSetLegacySymbol lObj in symbolSet.LegacySymbols)
                     {
-                        if(entity != null)
+                        if (entity != null)
                         {
                             if (lObj.EntityID != "NA")
                             {
@@ -1310,10 +1310,10 @@ namespace JointMilitarySymbologyLibrary
                                     match++;
                             }
                         }
-                        else if(lObj.EntityID == "NA")
+                        else if (lObj.EntityID == "NA")
                             match++;
 
-                        if(entityType != null)
+                        if (entityType != null)
                         {
                             if (lObj.EntityTypeID != "NA")
                             {
@@ -1321,10 +1321,10 @@ namespace JointMilitarySymbologyLibrary
                                     match++;
                             }
                         }
-                        else if(lObj.EntityTypeID == "NA")
+                        else if (lObj.EntityTypeID == "NA")
                             match++;
 
-                        if(entitySubType != null)
+                        if (entitySubType != null)
                         {
                             if (lObj.EntitySubTypeID != "NA")
                             {
@@ -1332,10 +1332,10 @@ namespace JointMilitarySymbologyLibrary
                                     match++;
                             }
                         }
-                        else if(lObj.EntitySubTypeID == "NA")
+                        else if (lObj.EntitySubTypeID == "NA")
                             match++;
 
-                        if(modifierOne != null)
+                        if (modifierOne != null)
                         {
                             if (lObj.ModifierOneID != "NA")
                             {
@@ -1343,10 +1343,10 @@ namespace JointMilitarySymbologyLibrary
                                     match++;
                             }
                         }
-                        else if(lObj.ModifierOneID == "NA")
+                        else if (lObj.ModifierOneID == "NA")
                             match++;
 
-                        if(modifierTwo != null)
+                        if (modifierTwo != null)
                         {
                             if (lObj.ModifierTwoID != "NA")
                             {
@@ -1354,14 +1354,14 @@ namespace JointMilitarySymbologyLibrary
                                     match++;
                             }
                         }
-                        else if(lObj.ModifierTwoID == "NA")
+                        else if (lObj.ModifierTwoID == "NA")
                             match++;
 
-                        if(match == 5)
+                        if (match == 5)
                         {
                             return lObj;
                         }
-                        
+
                         match = 0;
                     }
                 }

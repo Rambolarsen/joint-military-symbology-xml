@@ -13,11 +13,8 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Xml.Serialization;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -42,9 +39,9 @@ namespace JointMilitarySymbologyLibrary
         private char[] _semicolon = { ';', ' ' };
 
         private List<string> _testResults = new List<string>();
-        
+
         private JMSMLConfigETLConfig _etlConfig;
-        
+
         public SchemaETL(JMSMLConfigETLConfig config)
         {
             _etlConfig = config;
@@ -121,7 +118,7 @@ namespace JointMilitarySymbologyLibrary
         {
             // Build an order-sorted array of fields for the given schema.
 
-            FieldType[] fields = {};
+            FieldType[] fields = { };
 
             string[] schemaTypes = schema.SchemaTypeIDs.Split(' ');
 
@@ -132,7 +129,7 @@ namespace JointMilitarySymbologyLibrary
             {
                 JMSMLConfigETLConfigSchemaType schemaType = _findSchemaType(id);
 
-                if(schemaType != null)
+                if (schemaType != null)
                     fields = fields.Concat(schemaType.Fields).ToArray();
             }
 
@@ -175,7 +172,7 @@ namespace JointMilitarySymbologyLibrary
                             _writeField(w, field);
                         }
                     }
-                    else 
+                    else
                     {
                         _writeField(w, field);
                     }
@@ -193,7 +190,7 @@ namespace JointMilitarySymbologyLibrary
             {
                 isSubtyped = true;
 
-                using(var w = new StreamWriter(path + "\\" + _schemaFilePrefix + schema.Label + ".csv"))
+                using (var w = new StreamWriter(path + "\\" + _schemaFilePrefix + schema.Label + ".csv"))
                 {
                     _writeHeaders(w, _subtypeHeaders);
 
@@ -349,7 +346,7 @@ namespace JointMilitarySymbologyLibrary
                     firstTime = false;
                 }
 
-                string line = string.Format("{0}",  "Schema," + 
+                string line = string.Format("{0}", "Schema," +
                                                     schema.Label + "," +
                                                     schema.GeometryType + "," +
                                                     schema.LabelAlias + "," +
@@ -381,7 +378,7 @@ namespace JointMilitarySymbologyLibrary
             List<string> diff;
             IEnumerable<string> set1 = line1.Split(',').Distinct();
             IEnumerable<string> set2 = line2.Split(',').Distinct();
-            
+
             if (set2.Count() > set1.Count())
             {
                 diff = set2.Except(set1).ToList();
@@ -395,7 +392,7 @@ namespace JointMilitarySymbologyLibrary
 
             foreach (string token in diff)
             {
-                result = result +  " ; " + token;
+                result = result + " ; " + token;
             }
 
             if (result.Length > 0)

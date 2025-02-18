@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -89,7 +86,7 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + identity.Label.Replace(',', '-');
 
-            if(dimension != null)
+            if (dimension != null)
                 result = result + _configHelper.DomainSeparator + dimension.Label.Replace(',', '-');
 
             if (status != null)
@@ -106,12 +103,12 @@ namespace JointMilitarySymbologyLibrary
             return result;
         }
 
-        protected string BuildFrameItemTags(LibraryContext context, 
-                                            LibraryStandardIdentity identity, 
-                                            LibraryDimension dimension, 
-                                            LibraryStatus status, 
-                                            string graphicPath, 
-                                            bool omitSource, 
+        protected string BuildFrameItemTags(LibraryContext context,
+                                            LibraryStandardIdentity identity,
+                                            LibraryDimension dimension,
+                                            LibraryStatus status,
+                                            string graphicPath,
+                                            bool omitSource,
                                             bool omitLegacy,
                                             bool asAnyCivilian)
         {
@@ -126,7 +123,7 @@ namespace JointMilitarySymbologyLibrary
             result = result + identity.Label.Replace(',', '-') + ";";
             result = result + dimension.Label.Replace(',', '-') + ";";
 
-            if(status.StatusCode == 1)
+            if (status.StatusCode == 1)
                 result = result + ((status.LabelAlias == "") ? status.Label.Replace(',', '-') : status.LabelAlias.Replace(',', '-')) + ";";
 
             if (asAnyCivilian)
@@ -145,13 +142,13 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + "FRAME;";
 
-            if(!omitLegacy)
+            if (!omitLegacy)
                 result = result + _configHelper.SIDCIsNA + ";";
 
-            if(!omitSource)
+            if (!omitSource)
                 result = result + graphicPath.Substring(1) + ";";
 
-            if(_configHelper.Librarian.Affiliation(context.ID, dimension.ID, identity.ID).Graphic != null)
+            if (_configHelper.Librarian.Affiliation(context.ID, dimension.ID, identity.ID).Graphic != null)
                 result = result + "Point;";
             else
                 result = result + "NotValid;";
@@ -191,7 +188,7 @@ namespace JointMilitarySymbologyLibrary
 
             if (identity != null)
                 name = BuildFrameItemName(context, dimension, identity, status, asAnyCivilian);
-            
+
             return name;
         }
     }

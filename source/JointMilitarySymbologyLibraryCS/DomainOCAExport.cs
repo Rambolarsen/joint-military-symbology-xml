@@ -11,12 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace JointMilitarySymbologyLibrary
 {
     public class DomainOCAExport : OCAExport, IOCAExport
@@ -37,7 +31,7 @@ namespace JointMilitarySymbologyLibrary
         {
             //LibraryDimension dimension = _configHelper.Librarian.Dimension(statusGraphic.Dimension);
             //LibraryStandardIdentity identity = _configHelper.Librarian.StandardIdentity(statusGraphic.StandardIdentity);
-            
+
             string result = BuildOCAItemName(null, null, status) + "," + BuildOCACode(null, null, status);
 
             return result;

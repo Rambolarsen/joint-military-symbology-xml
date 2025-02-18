@@ -62,7 +62,7 @@ namespace JointMilitarySymbologyLibrary
             string itemOriginalPath = _configHelper.BuildOriginalPath(graphicPath, m.Graphic);
 
             if (!File.Exists(itemOriginalPath))
-            { 
+            {
                 _notes = _notes + "image file does not exist;";
                 logger.Warn("Image File Missing: " + itemOriginalPath);
             }

@@ -12,10 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -29,7 +25,7 @@ namespace JointMilitarySymbologyLibrary
         }
 
         string IContextExport.Line(LibraryContext context)
-        { 
+        {
             string result = context.Label.Replace(',', '-') + "," + Convert.ToString(context.ContextCode);
 
             return result;

@@ -11,13 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
 namespace JointMilitarySymbologyLibrary
 {
     public class LegacySymbolExport
@@ -107,7 +100,7 @@ namespace JointMilitarySymbologyLibrary
                 if (functionCode.SchemaOverride == "")
                 {
                     LegacyLetterCodeType letterCode = _configHelper.LegacyLetter(ss.LegacyCodingSchemeCode, _standard);
-                    if(letterCode != null)
+                    if (letterCode != null)
                         result = letterCode.Value;
                 }
                 else

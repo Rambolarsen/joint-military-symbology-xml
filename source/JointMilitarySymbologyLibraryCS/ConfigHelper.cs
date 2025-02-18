@@ -170,7 +170,7 @@ namespace JointMilitarySymbologyLibrary
                 {
                     // We found it here so lets determine where we are so
                     // we can return that information up the recursion chain.
-                    
+
                     whereItIs = whereWeAre;
                 }
                 else
@@ -370,7 +370,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string result = "";
 
-            foreach(JMSMLConfigETLConfigExportTag tag in _etlConfig.ExportTags)
+            foreach (JMSMLConfigETLConfigExportTag tag in _etlConfig.ExportTags)
             {
                 if (id == tag.Name)
                     result = result + ";" + tag.Value;
@@ -406,8 +406,8 @@ namespace JointMilitarySymbologyLibrary
             // Uses overrides in the jmsml configuration file to deliver custom output.
 
             string result;
-            
-            if(value.Label.Contains(','))
+
+            if (value.Label.Contains(','))
                 result = "\"" + value.Label + "\"" + "," + value.LabelAlias;
             else
                 result = value.Label + "," + value.LabelAlias;
@@ -444,7 +444,7 @@ namespace JointMilitarySymbologyLibrary
 
             LegacyLetterCodeType letterCode = null;
 
-            foreach(LegacyLetterCodeType letterCodeInArray in letterArray)
+            foreach (LegacyLetterCodeType letterCodeInArray in letterArray)
             {
                 if (letterCodeInArray.Name == standard)
                 {
@@ -479,7 +479,7 @@ namespace JointMilitarySymbologyLibrary
 
             LegacyFunctionCodeType functionCode = null;
 
-            foreach(LegacyFunctionCodeType functionCodeInArray in functionArray)
+            foreach (LegacyFunctionCodeType functionCodeInArray in functionArray)
             {
                 if (functionCodeInArray.Name == standard)
                 {

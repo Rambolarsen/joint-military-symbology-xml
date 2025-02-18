@@ -11,13 +11,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
 namespace JointMilitarySymbologyLibrary
 {
     public class LegacyFrameExport : FrameExport, IFrameExport
@@ -64,7 +57,7 @@ namespace JointMilitarySymbologyLibrary
 
                 result = result + "," + BuildSIDCKey(_legacyStatusCode(_standard, status), _legacyFrame);
 
-                if(_legacyFrame.LimitUseTo == "2525C" || _legacyFrame.LimitUseTo == "")
+                if (_legacyFrame.LimitUseTo == "2525C" || _legacyFrame.LimitUseTo == "")
                     // For 2525C frames or 2525Bc2 frames that are the same we 2525C we use the 2525D icons
                     // (2525C and some 2525Bc2 frames are identical to 2525D)
                     result = result + "," + BuildFrameCode(context, identity, dimension, status, false);

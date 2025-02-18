@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -23,7 +20,7 @@ namespace JointMilitarySymbologyLibrary
         // This class represents a 20 digit (2525D) Symbol ID Code.
         // It lets users manipulate the two elements of an SIDC
         // as strings or 32 bit unsigned integers.
-         
+
         private UInt32 _first10;
         private UInt32 _second10;
 
@@ -55,7 +52,7 @@ namespace JointMilitarySymbologyLibrary
             UInt32 p1;
             UInt32 p2;
 
-            if(partA.Length != 10 || partB.Length != 10)
+            if (partA.Length != 10 || partB.Length != 10)
             {
                 partA = SIDC.INVALID.PartAString;
                 partB = SIDC.INVALID.PartBString;
@@ -173,7 +170,7 @@ namespace JointMilitarySymbologyLibrary
         {
             get
             {
-                return this._first10.ToString().Substring(4,2);
+                return this._first10.ToString().Substring(4, 2);
             }
         }
     }

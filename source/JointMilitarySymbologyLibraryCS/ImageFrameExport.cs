@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 
 namespace JointMilitarySymbologyLibrary
@@ -60,9 +57,9 @@ namespace JointMilitarySymbologyLibrary
                             graphic = affiliation.Graphic;
                     else
                         if (asPlannedCivilian && affiliation.PlannedCivilianGraphic != "")
-                            graphic = affiliation.PlannedCivilianGraphic;
-                        else
-                            graphic = affiliation.PlannedGraphic;
+                        graphic = affiliation.PlannedCivilianGraphic;
+                    else
+                        graphic = affiliation.PlannedGraphic;
 
                     if (graphic == null)
                         _notes = _notes + "graphic is missing - frame is NA - frame is never to be drawn;";

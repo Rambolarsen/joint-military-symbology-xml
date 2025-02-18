@@ -11,15 +11,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NLog;
-using NLog.Config;
-using NLog.Layouts;
-using NLog.Targets;
-using NLog.Targets.Wrappers;
+using System;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -57,11 +50,11 @@ namespace JointMilitarySymbologyLibrary
         {
             string geometry = _geometryList[0];
 
-            if(eSubType != null)
+            if (eSubType != null)
                 geometry = _geometryList[(int)eSubType.GeometryType];
-            else if(eType != null)
+            else if (eType != null)
                 geometry = _geometryList[(int)eType.GeometryType];
-            else if(e != null)
+            else if (e != null)
                 geometry = _geometryList[(int)e.GeometryType];
 
             return geometry;
@@ -113,7 +106,7 @@ namespace JointMilitarySymbologyLibrary
                 else
                     code = code + "00";
             }
-            
+
             if (sig != null)
             {
                 code = code + sig.GraphicSuffix;
@@ -173,7 +166,7 @@ namespace JointMilitarySymbologyLibrary
             {
                 result = result + _configHelper.DomainSeparator + sig.Label;
             }
-            
+
             return result;
         }
 
@@ -192,7 +185,7 @@ namespace JointMilitarySymbologyLibrary
             string result = "";
             string entityLabelAlias = "";
 
-            if(entity != null)
+            if (entity != null)
                 entityLabelAlias = entity.LabelAlias;
 
             // Start with the 2525D elements, if they exist, used to create the symbol, to build the core name
@@ -215,7 +208,7 @@ namespace JointMilitarySymbologyLibrary
 
                                 if (eSubType == null)
                                     logger.Error("Cannot find the specified EntitySubType ID: " + symbol.EntitySubTypeID);
-                            }   
+                            }
                         }
                         else
                             logger.Error("Cannot find the specified EntityType ID: " + symbol.EntityTypeID);
@@ -292,11 +285,11 @@ namespace JointMilitarySymbologyLibrary
             // Contructs the category information for a given SymbolSet and entity, including the Label 
             // attribute of the SymbolSet and the type of icon being categorized, deperated by the
             // domain separator (usually a colon).
-            
+
             string result = "";
 
-            if(ss.Geometry == GeometryType.MIXED)
-                result =  ss.Label + _configHelper.DomainSeparator + geometry;
+            if (ss.Geometry == GeometryType.MIXED)
+                result = ss.Label + _configHelper.DomainSeparator + geometry;
             else
                 result = ss.Label + _configHelper.DomainSeparator + _iconTypes[(int)iconType];
 
@@ -356,7 +349,7 @@ namespace JointMilitarySymbologyLibrary
                 result = result + ";" + "Special Entity Subtypes";
             }
 
-            if(e != null)
+            if (e != null)
             {
                 result = result + ";" + e.Label.Replace(',', '-');
                 iType = Convert.ToString(e.Icon);
@@ -383,7 +376,7 @@ namespace JointMilitarySymbologyLibrary
                     {
                         graphic = GrabGraphic(eSubType.CloverGraphic, eSubType.RectangleGraphic, eSubType.SquareGraphic, eSubType.DiamondGraphic, sig.GraphicSuffix);
                     }
-                    
+
                     _notes = _notes + "icon touches frame;";
                 }
                 else if (eSubType.Icon == IconType.NA)
@@ -395,7 +388,7 @@ namespace JointMilitarySymbologyLibrary
 
                 xmlTags = eSubType.Tags;
             }
-            else if(eType != null)
+            else if (eType != null)
             {
                 // Add the type of geometry
 
@@ -407,7 +400,7 @@ namespace JointMilitarySymbologyLibrary
                     {
                         graphic = GrabGraphic(eType.CloverGraphic, eType.RectangleGraphic, eType.SquareGraphic, eType.DiamondGraphic, sig.GraphicSuffix);
                     }
-                    
+
                     _notes = _notes + "icon touches frame;";
                 }
                 else if (eType.Icon == IconType.NA)
@@ -419,7 +412,7 @@ namespace JointMilitarySymbologyLibrary
 
                 xmlTags = eType.Tags;
             }
-            else if(e != null)
+            else if (e != null)
             {
                 // Add the type of geometry
 
@@ -431,7 +424,7 @@ namespace JointMilitarySymbologyLibrary
                     {
                         graphic = GrabGraphic(e.CloverGraphic, e.RectangleGraphic, e.SquareGraphic, e.DiamondGraphic, sig.GraphicSuffix);
                     }
-                    
+
                     _notes = _notes + "icon touches frame;";
                 }
                 else if (e.Icon == IconType.NA)
@@ -476,7 +469,7 @@ namespace JointMilitarySymbologyLibrary
 
             if (!omitSource)
                 result = result + ";" + _configHelper.GetPath(ss.ID, FindEnum.FindEntities, true) + "\\" + graphic;
-            
+
             // Add the three most important pieces of information
 
             result = result + ";" + geometry;
@@ -497,7 +490,7 @@ namespace JointMilitarySymbologyLibrary
         protected string BuildEntityItemTags(LibraryStandardIdentityGroup sig, SymbolSet ss, SymbolSetLegacySymbol symbol, LegacyEntityType entity, LegacyFunctionCodeType code)
         {
             // Builds a list of seperated tag strings from information derived from the specified objects.
-            
+
             // TODO: Normalize with similar code found in the preceding function.
 
             string result = "";
@@ -578,7 +571,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string result = _configHelper.SIDCIsNew;
 
-            if(ss != null && e != null)
+            if (ss != null && e != null)
             {
                 uint partA = 1000000000 + (ss.SymbolSetCode.DigitOne * (uint)100000) + (ss.SymbolSetCode.DigitTwo * (uint)10000);
 
@@ -621,12 +614,12 @@ namespace JointMilitarySymbologyLibrary
 
                         else if (result.Substring(0, 1) == "W")
                             result = result.Substring(0, 13) + "**";
-                        
+
                         else if (result.Substring(10, 5) == "-----")
                             result = result.Substring(0, 10) + "*****";
 
                         else if (result.Substring(11, 4) == "----")
-                            result = result.Substring(0, 11) + "****";   
+                            result = result.Substring(0, 11) + "****";
                     }
                 }
                 else
@@ -642,7 +635,7 @@ namespace JointMilitarySymbologyLibrary
         {
             string name = "";
 
-            if(ss != null && e != null)
+            if (ss != null && e != null)
                 name = BuildEntityItemName(sig, ss, e, eType, eSubType);
 
             return name;
@@ -667,8 +660,8 @@ namespace JointMilitarySymbologyLibrary
         {
             string code = "";
 
-            if (ss != null); // && (e != null || (e == null && eType == null)))
-                code = BuildEntityCode(sig, ss, e, eType, eSubType);
+            if (ss != null) ; // && (e != null || (e == null && eType == null)))
+            code = BuildEntityCode(sig, ss, e, eType, eSubType);
 
             return code;
         }

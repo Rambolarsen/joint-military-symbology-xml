@@ -13,9 +13,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 
 namespace JointMilitarySymbologyLibrary
@@ -46,7 +43,7 @@ namespace JointMilitarySymbologyLibrary
 
             FindEnum find = FindEnum.FindEntities;
 
-            switch(amplifierGroup.AmplifierGroupCode)
+            switch (amplifierGroup.AmplifierGroupCode)
             {
                 case 1:
                 case 2:
@@ -86,9 +83,9 @@ namespace JointMilitarySymbologyLibrary
                      Convert.ToString(_configHelper.PointSize) + "," +
                      itemName + "," +
                      itemCategory + "," +
-                     itemTags + "," + 
+                     itemTags + "," +
                      itemID + "," +
-                     "Point"+ "," +
+                     "Point" + "," +
                      _notes;
 
             return result;

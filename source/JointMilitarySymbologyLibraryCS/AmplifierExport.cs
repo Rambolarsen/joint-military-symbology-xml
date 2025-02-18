@@ -12,9 +12,6 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -26,7 +23,7 @@ namespace JointMilitarySymbologyLibrary
         protected ConfigHelper _configHelper;
         protected string _notes = "";
 
-        protected string BuildAmplifierCode(LibraryAmplifierGroup amplifierGroup, 
+        protected string BuildAmplifierCode(LibraryAmplifierGroup amplifierGroup,
                                             LibraryAmplifierGroupAmplifier amplifier,
                                             LibraryStandardIdentityGroup identityGroup)
         {
@@ -91,7 +88,7 @@ namespace JointMilitarySymbologyLibrary
                 result = result + _configHelper.DomainSeparator;
                 result = result + identityGroup.Label.Replace(',', '-');
             }
-            
+
             return result;
         }
 
@@ -139,10 +136,10 @@ namespace JointMilitarySymbologyLibrary
 
             // Loop through standard identities in the group and add them
 
-            foreach(string sIID in identityGroup.StandardIdentityIDs.Split(' '))
+            foreach (string sIID in identityGroup.StandardIdentityIDs.Split(' '))
             {
                 LibraryStandardIdentity si = _configHelper.Librarian.StandardIdentity(sIID);
-                if(si != null)
+                if (si != null)
                 {
                     if (si.Label != identityGroup.Label)
                         result = result + si.Label.Replace(',', '-') + ";";
@@ -151,10 +148,10 @@ namespace JointMilitarySymbologyLibrary
 
             result = result + iType + ";";
 
-            if(!omitLegacy)
+            if (!omitLegacy)
                 result = result + _configHelper.SIDCIsNA + ";";
 
-            if(!omitSource)
+            if (!omitSource)
                 result = result + graphicPath.Substring(1) + ";";
 
             result = result + "Point" + ";";
@@ -174,7 +171,7 @@ namespace JointMilitarySymbologyLibrary
             key = key + identityGroup.LegacyStandardIdentityCode[0].Value;
             key = key + "-";
 
-            switch(amplifierGroup.AmplifierGroupCode)
+            switch (amplifierGroup.AmplifierGroupCode)
             {
                 case 1:
                 case 2:

@@ -12,13 +12,12 @@
  * limitations under the License.
  */
 
+using JointMilitarySymbologyLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.IO;
-using JointMilitarySymbologyLibrary;
+using System.Linq;
+using System.Text;
 
 namespace TestLegacyCodesCsv
 {

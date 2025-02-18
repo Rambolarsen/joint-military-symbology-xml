@@ -190,7 +190,7 @@ namespace JointMilitarySymbologyLibrary
                 w.WriteLine(headers);
                 w.Flush();
             }
-             
+
             foreach (SymbolSet ss in _lib.SymbolSets)
             {
                 logger.Info("Exporting symbols for: " + ss.ID);
@@ -333,7 +333,7 @@ namespace JointMilitarySymbologyLibrary
             if (isFirst)
             {
                 string headers = entityExport.Headers;
-                
+
                 w.WriteLine(headers);
                 w.Flush();
             }

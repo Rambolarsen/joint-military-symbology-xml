@@ -12,11 +12,7 @@
  * limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace JointMilitarySymbologyLibrary
 {
@@ -75,7 +71,7 @@ namespace JointMilitarySymbologyLibrary
 
             // Replace the 2525D ID with the 2525B Change 2 ID
             string dCode = BuildFrameCode(context, identity, dimension, status, false);
-            tags = tags.Replace(dCode, id); 
+            tags = tags.Replace(dCode, id);
 
             if (!File.Exists(itemOriginalPath))
                 _notes = _notes + "image file does not exist;";
