@@ -201,8 +201,6 @@ namespace DemoApp
                 var cacheSelectionStart = box.SelectionStart; //Cache SelectionStart as its reset when the Text property of the TextBox is set.
                 var sb = new StringBuilder(box.Text)
                 {
-                    Capacity = 0,
-                    Length = 0,
                     [box.SelectionStart] = e.KeyChar //Add the pressed key at the right position
                 }; //Create a StringBuilder as Strings are immutable
                 box.Text = sb.ToString(); //SelectionStart is reset after setting the text, so restore it

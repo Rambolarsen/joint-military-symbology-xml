@@ -111,8 +111,8 @@ namespace JointMilitarySymbologyLibrary
 
             XmlSerializer serializer = new XmlSerializer(typeof(JMSMLConfig));
 
-            serializer.UnknownNode += new XmlNodeEventHandler(serializer_UnknownNode);
-            serializer.UnknownAttribute += new XmlAttributeEventHandler(serializer_UnknownAttribute);
+            serializer.UnknownNode += serializer_UnknownNode;
+            serializer.UnknownAttribute += serializer_UnknownAttribute;
 
             if (configPath != "")
             {
@@ -250,7 +250,7 @@ namespace JointMilitarySymbologyLibrary
             wrapper.QueueLimit = 5000;
             wrapper.OverflowAction = AsyncTargetWrapperOverflowAction.Grow;
 
-            SimpleConfigurator.ConfigureForTargetLogging(wrapper, LogLevel.Debug);
+            LogManager.Setup().LoadConfiguration(c => c.ForLogger(LogLevel.Debug).WriteTo(wrapper));
         }
 
         private void serializer_UnknownNode(object sender, XmlNodeEventArgs e)
